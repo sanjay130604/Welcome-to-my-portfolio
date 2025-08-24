@@ -4,7 +4,17 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const projects = [
+// ✅ Define a type for project objects
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  liveUrl: string;
+  githubUrl: string;
+};
+
+const projects: Project[] = [
   {
     id: 1,
     title: 'Budget-App',
@@ -20,7 +30,7 @@ const projects = [
     description:
       'An anonymous journaling and AI-powered mood tracking app designed to support founders mental well-being through insights and prompts.',
     image: '/ai.jpeg',
-    liveUrl: 'https://your-foundertherapy-url.com',
+    liveUrl: 'http://founder-therapy-whqi.vercel.app', // ✅ Updated link
     githubUrl: 'https://github.com/sanjay130604/backend_founderTherary',
   },
   {
@@ -38,7 +48,7 @@ const projects = [
     description:
       'A travel discovery app that helps users explore destinations, plan trips, and get inspired by stunning places around the globe',
     image: '/laptop.jpg',
-    liveUrl: ' https://sanjay130604.github.io/explorethwworld/',
+    liveUrl: 'https://sanjay130604.github.io/explorethwworld/',
     githubUrl: 'https://github.com/sanjay130604/explorethwworld',
   },
 ];
@@ -57,7 +67,7 @@ export default function ProjectsSection() {
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project) => (
+        {projects.map((project: Project) => (
           <motion.div
             key={project.id}
             initial={{ opacity: 0, y: 20 }}
