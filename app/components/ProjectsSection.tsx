@@ -11,7 +11,7 @@ const projects = [
     description:
       'A personal finance tracker that helps users plan, manage, and visualize their monthly and yearly budgets effortlessly.',
     image: '/code.jpg',
-    liveUrl: 'https://your-budget-app-url.com',
+    liveUrl: 'http://founder-therapy-whqi.vercel.app',
     githubUrl: 'https://github.com/sanjay130604/Budget-App',
   },
   {
